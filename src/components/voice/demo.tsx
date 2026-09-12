@@ -125,30 +125,36 @@ export function VoiceDemo({
   ];
 
   return (
-    <div className="rounded-[28px] border border-border bg-surface p-5 shadow-[0_20px_60px_-40px_rgba(20,17,12,0.45)] sm:p-6">
-      <div className="flex flex-wrap gap-2">
+    <div className="surface-card hairline p-5 sm:p-6">
+      <div className="flex items-center justify-between gap-3 border-b border-border pb-3">
+        <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-subtle">Console</p>
+        <p className="text-[10px] uppercase tracking-[0.16em] text-muted">
+          {status === "idle" ? "Ready" : status === "playing" ? "Playback" : status === "recording" ? "Live" : status === "thinking" ? "Working" : "Error"}
+        </p>
+      </div>
+      <div className="mt-4 flex flex-wrap gap-2">
         {scenarios.map((s) => (
           <button
             key={s.id}
             type="button"
             onClick={() => setScenario(s.id)}
             className={cn(
-              "h-11 rounded-full px-4 text-sm transition-colors",
-              scenario === s.id ? "bg-ink text-bg" : "border border-border text-muted hover:text-fg",
+              "h-9 rounded-[4px] px-3 text-sm grain-hover",
+              scenario === s.id ? "bg-ink text-paper" : "border border-ink text-ink",
             )}
           >
             {s.label}
           </button>
         ))}
       </div>
-      <p className="mt-5 font-display text-2xl leading-snug tracking-tight text-fg sm:text-[1.7rem]">
+      <p className="mt-5 font-display text-xl leading-snug tracking-tight text-fg sm:text-[1.35rem]">
         {DEMO_SCRIPTS[scenario].line}
       </p>
       <div className="mt-5 grid gap-3 sm:grid-cols-2">
         <label className="text-xs font-medium uppercase tracking-[0.14em] text-subtle">
           Voice
           <select
-            className="mt-1 h-11 w-full rounded-[12px] border border-border bg-bg-elevated px-3 text-sm text-fg"
+            className="mt-1 h-11 w-full rounded-[4px] border border-border bg-zinc px-3 text-sm text-fg"
             value={voiceId}
             onChange={(e) => setVoiceId(e.target.value)}
           >
@@ -162,7 +168,7 @@ export function VoiceDemo({
         <label className="text-xs font-medium uppercase tracking-[0.14em] text-subtle">
           Language
           <select
-            className="mt-1 h-11 w-full rounded-[12px] border border-border bg-bg-elevated px-3 text-sm text-fg"
+            className="mt-1 h-11 w-full rounded-[4px] border border-border bg-zinc px-3 text-sm text-fg"
             value={language}
             onChange={(e) => setLanguage(e.target.value)}
           >
@@ -190,7 +196,7 @@ export function VoiceDemo({
           {status === "recording" ? labels.talking : labels.talk}
         </Button>
       </div>
-      {error ? <p className="mt-3 text-sm text-danger">{error}</p> : null}
+      {error ? <p className="mt-3 text-sm text-muted">{error}</p> : null}
       {log.length ? (
         <ol className="mt-5 space-y-2 border-t border-border pt-4">
           {log.slice(-4).map((m, i) => (
@@ -209,16 +215,13 @@ export function VoiceDemo({
 
 function Waveform({ active }: { active: boolean }) {
   return (
-    <div className="mt-5 flex h-12 items-end justify-between gap-1" aria-hidden="true">
+    <div className="mt-5 flex h-10 items-end justify-between gap-px" aria-hidden="true">
       {Array.from({ length: 32 }).map((_, i) => (
         <span
           key={i}
-          className={cn(
-            "w-full rounded-full bg-primary/35",
-            active ? "animate-pulse" : "",
-          )}
+          className={cn("w-full bg-ink/25", active ? "animate-pulse" : "")}
           style={{
-            height: `${18 + ((i * 17) % 28)}px`,
+            height: `${14 + ((i * 17) % 22)}px`,
             animationDelay: `${i * 40}ms`,
           }}
         />

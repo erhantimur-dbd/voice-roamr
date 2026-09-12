@@ -11,7 +11,7 @@ function CallsPage() {
   return (
     <div>
       <h2 className="font-display text-3xl tracking-tight">Calls</h2>
-      <div className="mt-6 divide-y divide-border overflow-hidden rounded-[20px] border border-border bg-surface">
+      <div className="mt-6 divide-y divide-border overflow-hidden surface-card">
         {data.calls.length === 0 ? <p className="px-5 py-8 text-sm text-muted">No calls logged yet.</p> : null}
         {data.calls.map((c) => (
           <article key={c.id} className="px-5 py-4">

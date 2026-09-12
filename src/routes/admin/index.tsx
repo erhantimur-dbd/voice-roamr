@@ -18,7 +18,7 @@ function AdminHome() {
         <Stat label="Minutes" value={formatNumber(Math.round(data.totals.minutes))} />
         <Stat label="Live numbers" value={formatNumber(data.totals.numbers)} />
       </div>
-      <section className="rounded-[24px] border border-border bg-surface p-5">
+      <section className="surface-card p-5">
         <h3 className="font-display text-xl">Minutes</h3>
         <AreaTrend data={data.trend} dataKey="minutes" label="Minutes" />
       </section>
@@ -29,7 +29,7 @@ function AdminHome() {
             All
           </Link>
         </div>
-        <div className="mt-3 divide-y divide-border rounded-[20px] border border-border bg-surface">
+        <div className="mt-3 divide-y divide-border surface-card">
           {data.customers.slice(0, 8).map((c) => (
             <Link key={c.id} to="/admin/customers/$id" params={{ id: c.id }} className="flex items-center justify-between px-5 py-3 text-sm hover:bg-bg">
               <span>{c.name}</span>

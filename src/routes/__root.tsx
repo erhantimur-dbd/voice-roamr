@@ -81,7 +81,19 @@ export const Route = createRootRoute({
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: META.title },
       { name: "description", content: META.description },
-      { name: "theme-color", content: "#f3efe6" },
+      { name: "theme-color", content: "#0A0A0A" },
+      { property: "og:title", content: META.title },
+      { property: "og:description", content: META.description },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: SITE.url },
+      { property: "og:site_name", content: SITE.product },
+      { property: "og:image", content: `${SITE.url}/og.jpg` },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: META.title },
+      { name: "twitter:description", content: META.description },
+      { name: "twitter:image", content: `${SITE.url}/og.jpg` },
       { name: "author", content: SITE.name },
       { name: "robots", content: "index,follow,max-image-preview:large" },
       { name: "keywords", content: META.keywords },
@@ -97,7 +109,7 @@ export const Route = createRootRoute({
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Outfit:wght@400;500;600&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
       },
       { rel: "canonical", href: SITE.url },
       { rel: "alternate", type: "text/plain", href: "/llms.txt", title: "LLM brief" },
@@ -135,9 +147,9 @@ function RootDocument() {
                 position="bottom-right"
                 toastOptions={{
                   style: {
-                    background: "#ffffff",
-                    border: "1px solid #e2dbcf",
-                    color: "#14110c",
+                    background: "#FFFFFF",
+                    border: "1px solid #E4E4E7",
+                    color: "#0A0A0A",
                   },
                 }}
               />

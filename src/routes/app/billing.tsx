@@ -15,7 +15,7 @@ export const Route = createFileRoute("/app/billing")({
 function BillingPage() {
   const data = useAppConsole();
   const invalidate = useConsoleInvalidate();
-  const [interval, setInterval] = useState<"monthly" | "annual">("annual");
+  const [interval, setInterval] = useState<"monthly" | "annual">("monthly");
   const [pending, setPending] = useState<string | null>(null);
 
   async function buy(planId: "starter" | "growth" | "scale") {
@@ -50,7 +50,7 @@ function BillingPage() {
       </div>
       <div className="grid gap-3 lg:grid-cols-3">
         {PLANS.map((p) => (
-          <article key={p.id} className="rounded-[20px] border border-border bg-surface p-5">
+          <article key={p.id} className="surface-card p-5">
             <h3 className="font-display text-2xl">{p.name}</h3>
             <p className="mt-2 font-display text-3xl">{formatMoney(interval === "annual" ? Math.round(p.annual / 12) : p.monthly)}</p>
             <Button
@@ -66,7 +66,7 @@ function BillingPage() {
       </div>
       <section>
         <h3 className="font-display text-xl">Invoices</h3>
-        <div className="mt-3 divide-y divide-border rounded-[20px] border border-border bg-surface">
+        <div className="mt-3 divide-y divide-border surface-card">
           {data.invoices.length === 0 ? <p className="px-5 py-6 text-sm text-muted">No invoices yet.</p> : null}
           {data.invoices.map((inv) => (
             <div key={inv.id} className="flex items-center justify-between px-5 py-3 text-sm">

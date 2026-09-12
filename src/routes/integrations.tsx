@@ -21,7 +21,7 @@ function IntegrationsPage() {
             <h2 className="font-display text-2xl tracking-tight">{g}</h2>
             <div className="mt-4 grid gap-3 md:grid-cols-2">
               {INTEGRATIONS.filter((i) => i.group === g).map((i) => (
-                <article key={i.id} className="rounded-[20px] border border-border bg-surface p-5">
+                <article key={i.id} className="surface-card p-5">
                   <h3 className="font-display text-xl tracking-tight">{i.name}</h3>
                   <p className="mt-1 text-sm text-muted">{i.blurb}</p>
                 </article>

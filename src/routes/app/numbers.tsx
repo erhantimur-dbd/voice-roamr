@@ -32,7 +32,7 @@ function NumbersPage() {
       </p>
       <div className="mt-6">
         <h3 className="text-sm uppercase tracking-[0.14em] text-subtle">Your numbers</h3>
-        <div className="mt-3 divide-y divide-border rounded-[20px] border border-border bg-surface">
+        <div className="mt-3 divide-y divide-border surface-card">
           {data.numbers.length === 0 ? <p className="px-5 py-6 text-sm text-muted">None yet.</p> : null}
           {data.numbers.map((n) => (
             <div key={n.id} className="flex items-center justify-between px-5 py-3 text-sm">
@@ -49,7 +49,7 @@ function NumbersPage() {
       </div>
       <div className="mt-8 grid gap-3 md:grid-cols-2">
         {NUMBER_CATALOG.map((n) => (
-          <article key={n.e164} className="flex items-center justify-between gap-3 rounded-[20px] border border-border bg-surface p-5">
+          <article key={n.e164} className="flex items-center justify-between gap-3 surface-card p-5">
             <div>
               <p className="tabular-nums text-fg">{n.e164}</p>
               <p className="text-xs text-subtle">

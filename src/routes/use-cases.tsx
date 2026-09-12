@@ -16,8 +16,8 @@ function UseCasesPage() {
       <PageHero kicker={t("navUse")} title="Personal assistant, sales, support — then the rest of the desk." lead="High-value voice work: a chief of staff, a closer, and a night desk that never clocks out." />
       <div className="mx-auto grid max-w-6xl gap-4 px-4 py-14 sm:px-6 md:grid-cols-2">
         {USE_CASES.map((u) => (
-          <article key={u.id} className="rounded-[28px] border border-border bg-surface p-6">
-            <p className="text-xs uppercase tracking-[0.16em] text-primary">{u.kicker}</p>
+          <article key={u.id} className="surface-card p-6">
+            <p className="text-xs uppercase tracking-[0.16em] text-muted">{u.kicker}</p>
             <h2 className="mt-3 font-display text-3xl tracking-tight">{u.name}</h2>
             <p className="mt-2 text-sm text-muted">{u.summary}</p>
             <ul className="mt-5 space-y-2 text-sm">

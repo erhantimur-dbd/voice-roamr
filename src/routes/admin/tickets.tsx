@@ -19,7 +19,7 @@ function TicketsPage() {
       <div className="mt-6 space-y-3">
         {data.tickets.length === 0 ? <p className="text-sm text-muted">Inbox is clear.</p> : null}
         {data.tickets.map((t) => (
-          <article key={t.id} className="rounded-[20px] border border-border bg-surface p-5">
+          <article key={t.id} className="surface-card p-5">
             <div className="flex items-start justify-between gap-3">
               <div>
                 <h3 className="font-display text-xl">{t.subject}</h3>

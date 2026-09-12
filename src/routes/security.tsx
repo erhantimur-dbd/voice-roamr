@@ -15,7 +15,7 @@ function SecurityPage() {
       <PageHero kicker="Security" title={t("guardTitle")} lead={t("guardLead")} />
       <div className="mx-auto grid max-w-6xl gap-3 px-4 py-14 sm:px-6 md:grid-cols-2">
         {GUARDRAILS.map((g) => (
-          <article key={g.id} className="rounded-[20px] border border-border bg-surface p-5">
+          <article key={g.id} className="surface-card p-5">
             <h2 className="font-display text-xl tracking-tight">{g.label}</h2>
             <p className="mt-2 text-sm text-muted">{g.hint}</p>
           </article>

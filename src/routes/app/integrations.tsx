@@ -47,7 +47,7 @@ function IntegrationsConsole() {
           const status = statusFor(i.id);
           const on = status === "connected";
           return (
-            <article key={i.id} className="rounded-[20px] border border-border bg-surface p-5">
+            <article key={i.id} className="surface-card p-5">
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <p className="text-xs uppercase tracking-[0.14em] text-subtle">{i.group}</p>

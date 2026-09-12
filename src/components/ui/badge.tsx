@@ -11,9 +11,9 @@ export function Badge({
       className={cn(
         "inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium",
         tone === "muted" && "bg-surface text-muted border border-border",
-        tone === "primary" && "bg-primary/15 text-primary",
-        tone === "live" && "bg-success/15 text-success",
-        tone === "warn" && "bg-danger/15 text-danger",
+        tone === "primary" && "bg-ink text-paper",
+        tone === "live" && "border border-ink text-ink",
+        tone === "warn" && "border border-zinc-400 text-muted",
         className,
       )}
       {...props}

@@ -22,11 +22,11 @@ function AnalyticsPage() {
           value={`${Math.max(0, data.workspace.minutes_included - data.workspace.minutes_used).toFixed(0)} min`}
         />
       </div>
-      <section className="rounded-[24px] border border-border bg-surface p-5">
+      <section className="surface-card p-5">
         <h3 className="font-display text-xl">Minutes</h3>
         <AreaTrend data={data.usageDays} dataKey="minutes" label="Minutes" />
       </section>
-      <section className="rounded-[24px] border border-border bg-surface p-5">
+      <section className="surface-card p-5">
         <h3 className="font-display text-xl">Calls</h3>
         <AreaTrend data={data.usageDays} dataKey="calls" label="Calls" />
       </section>

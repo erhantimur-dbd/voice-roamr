@@ -2,38 +2,49 @@
 @import "tw-animate-css";
 
 @theme {
-  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Fraunces", "Times New Roman", serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Inter", ui-sans-serif, system-ui, monospace;
 
-  --color-bg: #f3efe6;
-  --color-bg-elevated: #faf7f0;
+  --color-ink: #0a0a0a;
+  --color-paper: #ffffff;
+  --color-zinc: #f4f4f5;
+  --color-zinc-200: #e4e4e7;
+  --color-zinc-400: #a1a1aa;
+  --color-zinc-600: #52525b;
+
+  --color-bg: #f4f4f5;
+  --color-bg-elevated: #f4f4f5;
   --color-surface: #ffffff;
-  --color-ink: #14110c;
-  --color-fg: #14110c;
-  --color-muted: #6a6458;
-  --color-subtle: #8f8778;
-  --color-primary: #1a6b5c;
-  --color-primary-fg: #f3efe6;
-  --color-border: #e2dbcf;
-  --color-border-strong: #c9c0b0;
-  --color-danger: #b42318;
-  --color-success: #1f7a4d;
-  --color-ring: #1a6b5c;
+  --color-fg: #0a0a0a;
+  --color-muted: #52525b;
+  --color-subtle: #a1a1aa;
+  --color-primary: #0a0a0a;
+  --color-primary-fg: #ffffff;
+  --color-border: #e4e4e7;
+  --color-border-strong: #a1a1aa;
+  --color-danger: #0a0a0a;
+  --color-success: #52525b;
+  --color-ring: #0a0a0a;
 
-  --radius-xs: 4px;
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
-  --radius: 12px;
+  --grain-opacity: 0.032;
+  --grain-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/><feComponentTransfer><feFuncA type='table' tableValues='0 0.035'/></feComponentTransfer></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 8px;
+  --radius-xl: 8px;
+  --radius: 8px;
 }
 
 @layer base {
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: var(--color-bg);
+    background-color: var(--color-bg);
+    background-image: var(--grain-image);
+    background-size: 180px 180px;
     color: var(--color-fg);
     scroll-behavior: smooth;
     scroll-padding-top: 5.5rem;
@@ -47,7 +58,9 @@
 
   body {
     font-family: var(--font-sans);
-    background: var(--color-bg);
+    background-color: var(--color-bg);
+    background-image: var(--grain-image);
+    background-size: 180px 180px;
     color: var(--color-fg);
     line-height: 1.5;
   }
@@ -64,7 +77,7 @@
     font-family: var(--font-display);
     letter-spacing: -0.03em;
     line-height: 1.12;
-    font-weight: 550;
+    font-weight: 600;
   }
 
   p {
@@ -72,7 +85,7 @@
   }
 
   ::selection {
-    background: color-mix(in oklab, var(--color-primary) 28%, transparent);
+    background: color-mix(in oklab, var(--color-ink) 14%, transparent);
     color: var(--color-fg);
   }
 }
@@ -95,5 +108,63 @@
 }
 
 .hairline {
-  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--color-fg) 12%, transparent);
+  box-shadow: inset 0 0 0 1px var(--color-ink);
+}
+
+.rule-double {
+  padding-bottom: 0.85rem;
+  background-image:
+    linear-gradient(currentColor, currentColor),
+    linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position:
+    0 100%,
+    0 calc(100% - 4px);
+  background-size:
+    7.5rem 1px,
+    7.5rem 1px;
+}
+
+.letterpress {
+  text-shadow: 0 1px 0 rgb(255 255 255 / 0.72);
+}
+
+.surface-card {
+  background-color: var(--color-surface);
+  background-image: var(--grain-image);
+  background-size: 180px 180px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.surface-ink {
+  background-color: var(--color-ink);
+  background-image: var(--grain-image);
+  background-size: 180px 180px;
+  color: var(--color-paper);
+}
+
+.hero-hatch {
+  background-color: var(--color-zinc);
+  background-image:
+    var(--grain-image),
+    repeating-linear-gradient(
+      -32deg,
+      transparent,
+      transparent 5px,
+      color-mix(in srgb, var(--color-ink) 9%, transparent) 5px,
+      color-mix(in srgb, var(--color-ink) 9%, transparent) 6px
+    );
+  background-size:
+    180px 180px,
+    auto;
+}
+
+.grain-hover {
+  background-image: none;
+}
+
+.grain-hover:hover {
+  background-image: var(--grain-image);
+  background-size: 140px 140px;
 }

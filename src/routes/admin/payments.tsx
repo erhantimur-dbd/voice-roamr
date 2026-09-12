@@ -11,7 +11,7 @@ function PaymentsPage() {
   return (
     <div>
       <h2 className="font-display text-3xl tracking-tight">Payments</h2>
-      <div className="mt-6 divide-y divide-border rounded-[20px] border border-border bg-surface">
+      <div className="mt-6 divide-y divide-border surface-card">
         {data.invoices.length === 0 ? <p className="px-5 py-8 text-sm text-muted">No invoices yet.</p> : null}
         {data.invoices.map((inv) => (
           <div key={inv.id} className="flex items-center justify-between px-5 py-3 text-sm">
