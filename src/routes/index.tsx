@@ -4,12 +4,18 @@ import { SiteShell } from "@/components/site/shell";
 import { VoiceDemo } from "@/components/voice/demo";
 import { Button } from "@/components/ui/button";
 import { useI18n } from "@/lib/locale";
-import { GUARDRAILS, INTEGRATIONS, LOCALES, PLANS, USE_CASES, VOICES } from "@/lib/product";
+import { GUARDRAILS, INTEGRATIONS, LOCALES, PLANS, USE_CASES } from "@/lib/product";
 import { formatMoney } from "@/lib/utils";
 
 export const Route = createFileRoute("/")({
   component: Home,
 });
+
+const HERO = {
+  eyebrow: "AI voice agent · real phone number",
+  title: "Keep your business going 24/7 — never miss an opportunity.",
+  sub: "Roamr answers on your number, books or escalates to you, in the languages your customers speak.",
+} as const;
 
 function Home() {
   const { t } = useI18n();
@@ -18,9 +24,9 @@ function Home() {
       <section className="border-b border-border bg-bg">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div>
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-subtle">{t("kicker")}</p>
-            <h1 className="rule-double mt-4 font-display text-4xl tracking-tight sm:text-6xl">{t("heroTitle")}</h1>
-            <p className="mt-5 max-w-xl text-base text-muted sm:text-lg">{t("heroLead")}</p>
+            <p className="text-xs font-medium tracking-[0.04em] text-subtle">{HERO.eyebrow}</p>
+            <h1 className="rule-double mt-4 font-display text-4xl tracking-tight sm:text-6xl">{HERO.title}</h1>
+            <p className="mt-5 max-w-xl text-base text-muted sm:text-lg">{HERO.sub}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg">
                 <Link to="/signup">{t("start")}</Link>
@@ -29,20 +35,19 @@ function Home() {
                 <a href="#demo">{t("demo")}</a>
               </Button>
             </div>
-            <dl className="mt-10 grid grid-cols-3 gap-4 text-sm">
-              <div>
-                <dt className="text-subtle">Languages</dt>
-                <dd className="font-display text-2xl">25</dd>
-              </div>
-              <div>
-                <dt className="text-subtle">Voices</dt>
-                <dd className="font-display text-2xl">{VOICES.length}</dd>
-              </div>
-              <div>
-                <dt className="text-subtle">Coverage</dt>
-                <dd className="font-display text-2xl">24/7</dd>
-              </div>
-            </dl>
+            <p className="mt-10 max-w-xl text-[11px] font-medium tracking-[0.04em] text-muted">
+              Real phone number — not a chat widget
+              <span aria-hidden="true" className="text-zinc-400">
+                {" "}
+                ·{" "}
+              </span>
+              Multilingual, 24/7
+              <span aria-hidden="true" className="text-zinc-400">
+                {" "}
+                ·{" "}
+              </span>
+              Answer · book · escalate
+            </p>
           </div>
           <div id="demo" className="relative">
             <div className="hero-hatch absolute -inset-3 -z-10 sm:-inset-5" aria-hidden="true" />
