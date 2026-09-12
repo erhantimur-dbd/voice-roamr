@@ -13,7 +13,7 @@ function UseCasesPage() {
   const { t } = useI18n();
   return (
     <SiteShell>
-      <PageHero kicker={t("navUse")} title="Personal assistant, sales, support — then the rest of the desk." lead="High-value voice work: a chief of staff, a closer, and a night desk that never clocks out." />
+      <PageHero kicker={t("navUse")} title="AI receptionist, sales, support — then the rest of the desk." lead="High-value voice work: a front desk, a closer, and a night desk that never clocks out." />
       <div className="mx-auto grid max-w-6xl gap-4 px-4 py-14 sm:px-6 md:grid-cols-2">
         {USE_CASES.map((u) => (
           <article key={u.id} className="surface-card p-6">

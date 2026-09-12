@@ -30,20 +30,20 @@ export const LOCALES = [
 export type LocaleCode = (typeof LOCALES)[number]["code"];
 
 export const VOICES = [
-  { id: "eve", name: "Eve", type: "warm", best: "Personal assistant", line: "Clear, composed, easy to trust." },
-  { id: "ara", name: "Ara", type: "assistant", best: "Personal assistant", line: "Bright and precise, built for briefings." },
+  { id: "eve", name: "Eve", type: "warm", best: "AI receptionist", line: "Clear, composed, easy to trust." },
+  { id: "ara", name: "Ara", type: "assistant", best: "AI receptionist", line: "Bright and precise, built for briefings." },
   { id: "leo", name: "Leo", type: "sales", best: "Sales", line: "Confident closer with a human pace." },
   { id: "rex", name: "Rex", type: "warm", best: "Support", line: "Warm, friendly, naturally reassuring." },
   { id: "sal", name: "Sal", type: "professional", best: "Support", line: "Even, professional, good on long calls." },
   { id: "atlas", name: "Atlas", type: "professional", best: "Reception", line: "Global, steady, boardroom-ready." },
-  { id: "aurora", name: "Aurora", type: "warm", best: "Personal assistant", line: "Soft lift, excellent overnight concierge." },
+  { id: "aurora", name: "Aurora", type: "warm", best: "AI receptionist", line: "Soft lift, excellent overnight concierge." },
   { id: "liora", name: "Liora", type: "support", best: "Support", line: "Empathetic without sounding scripted." },
   { id: "carina", name: "Carina", type: "sales", best: "Sales", line: "Crisp outbound energy, never pushy." },
   { id: "naksh", name: "Naksh", type: "character", best: "Concierge", line: "Distinct presence across languages." },
   { id: "zagan", name: "Zagan", type: "character", best: "Collections", line: "Low, direct, keeps the line moving." },
   { id: "helix", name: "Helix", type: "professional", best: "IT helpdesk", line: "Technical diction, patient explanations." },
   { id: "orion", name: "Orion", type: "professional", best: "Sales", line: "Measured, senior, high-trust." },
-  { id: "luna", name: "Luna", type: "assistant", best: "Personal assistant", line: "Quiet luxury. Calendar, travel, follow-ups." },
+  { id: "luna", name: "Luna", type: "assistant", best: "AI receptionist", line: "Quiet luxury. Calendar, travel, follow-ups." },
   { id: "wellness", name: "Wellness", type: "support", best: "Support", line: "Soothing register for sensitive calls." },
   { id: "support", name: "Support", type: "support", best: "Support", line: "Soft, empathetic, built for queues." },
 ] as const;
@@ -60,9 +60,9 @@ export const VOICE_TYPES = [
 export const USE_CASES = [
   {
     id: "assistant",
-    name: "Personal assistant",
+    name: "AI receptionist",
     kicker: "High value",
-    summary: "Briefings, calendars, travel, follow-ups — a chief of staff that picks up.",
+    summary: "Answers the line, books the calendar, screens callers — a front desk that never misses.",
     bullets: ["Morning brief from Calendar and Gmail", "Books and moves meetings", "Screens unknown callers"],
   },
   {
@@ -257,7 +257,7 @@ export const NUMBER_CATALOG: {
 
 export const DEMO_SCRIPTS: Record<string, { title: string; language: string; voice: string; line: string; prompt: string }> = {
   assistant: {
-    title: "Personal assistant",
+    title: "AI receptionist",
     language: "en",
     voice: "eve",
     line: "Good morning. You have three meetings today. The first is with Priya at ten, then a flight hold for Friday. Shall I brief you, or move the ten o’clock?",
