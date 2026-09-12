@@ -20,7 +20,7 @@ function ContactPage() {
     <SiteShell>
       <PageHero kicker="Contact" title="A human still answers." lead="Product questions, incidents, partnerships — pick the right desk." />
       <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6">
-        <ul className="divide-y divide-border rounded-[24px] border border-border bg-surface">
+        <ul className="surface-card divide-y divide-border">
           {rows.map(([label, email]) => (
             <li key={email} className="flex items-center justify-between gap-4 px-5 py-4 text-sm">
               <span className="text-muted">{label}</span>

@@ -48,7 +48,7 @@ function AgentsPage() {
             key={a.id}
             to="/app/agents/$id"
             params={{ id: a.id }}
-            className="rounded-[20px] border border-border bg-surface p-5 hover:border-border-strong"
+            className="surface-card p-5 hover:border-border-strong"
           >
             <div className="flex items-start justify-between gap-3">
               <h3 className="font-display text-2xl tracking-tight">{a.name}</h3>

@@ -16,7 +16,7 @@ function LanguagesPage() {
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3">
           {LOCALES.map((l) => (
-            <article key={l.code} className="rounded-[20px] border border-border bg-surface p-5">
+            <article key={l.code} className="surface-card p-5">
               <p className="font-display text-2xl tracking-tight">{l.native}</p>
               <p className="mt-1 text-sm text-muted">{l.name}</p>
               <p className="mt-3 text-xs uppercase tracking-[0.14em] text-subtle">TTS {l.tts}</p>

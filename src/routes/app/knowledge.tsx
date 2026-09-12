@@ -40,7 +40,7 @@ function KnowledgePage() {
       <div className="space-y-3">
         {data.docs.length === 0 ? <p className="text-sm text-muted">No documents yet.</p> : null}
         {data.docs.map((d) => (
-          <article key={d.id} className="rounded-[20px] border border-border bg-surface p-5">
+          <article key={d.id} className="surface-card p-5">
             <div className="flex items-start justify-between gap-3">
               <h3 className="font-display text-xl tracking-tight">{d.title}</h3>
               <button

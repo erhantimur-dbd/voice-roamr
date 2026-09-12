@@ -11,7 +11,7 @@ function CustomersPage() {
   return (
     <div>
       <h2 className="font-display text-3xl tracking-tight">Customers</h2>
-      <div className="mt-6 overflow-x-auto rounded-[20px] border border-border bg-surface">
+      <div className="mt-6 overflow-x-auto surface-card">
         <table className="w-full min-w-[640px] text-left text-sm">
           <thead className="text-xs uppercase tracking-[0.14em] text-subtle">
             <tr>

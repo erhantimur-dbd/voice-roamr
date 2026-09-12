@@ -45,7 +45,7 @@ export function SiteNav() {
   ];
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border/80 bg-bg/90 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-border bg-bg">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:h-[4.5rem] sm:px-6">
         <Link to="/" onClick={() => setOpen(false)} aria-label="Roamr home">
           <LogoWord />
@@ -109,7 +109,7 @@ export function SiteNav() {
             </Link>
             <Link
               to="/signup"
-              className="mt-2 rounded-[14px] bg-primary px-4 py-3 text-center text-sm font-medium text-primary-fg"
+              className="mt-2 rounded-[4px] bg-ink px-4 py-3 text-center text-sm font-medium text-paper grain-hover"
               onClick={() => setOpen(false)}
             >
               {t("start")}
@@ -187,11 +187,11 @@ export function SiteShell({ children }: { children: ReactNode }) {
 
 export function PageHero({ kicker, title, lead }: { kicker: string; title: string; lead?: string }) {
   return (
-    <section className="border-b border-border bg-ink text-bg">
+    <section className="surface-ink border-b border-ink">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <p className="text-xs font-medium uppercase tracking-[0.18em] text-bg/60">{kicker}</p>
-        <h1 className="mt-3 max-w-3xl font-display text-4xl tracking-tight sm:text-5xl">{title}</h1>
-        {lead ? <p className="mt-4 max-w-2xl text-base text-bg/70">{lead}</p> : null}
+        <p className="text-xs font-medium uppercase tracking-[0.18em] text-paper/60">{kicker}</p>
+        <h1 className="rule-double mt-3 max-w-3xl font-display text-4xl tracking-tight sm:text-5xl">{title}</h1>
+        {lead ? <p className="mt-4 max-w-2xl text-base text-paper/70">{lead}</p> : null}
       </div>
     </section>
   );

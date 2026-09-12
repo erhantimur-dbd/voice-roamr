@@ -36,7 +36,7 @@ function Overview() {
         <Stat label="Numbers" value={String(data.numbers.length)} />
         <Stat label="Calls" value={String(data.calls.length)} />
       </div>
-      <section className="rounded-[24px] border border-border bg-surface p-5">
+      <section className="surface-card p-5">
         <h3 className="font-display text-xl tracking-tight">Minutes, last 14 days</h3>
         <div className="mt-4">
           <AreaTrend data={data.usageDays} dataKey="minutes" label="Minutes" />
@@ -44,7 +44,7 @@ function Overview() {
       </section>
       <section>
         <h3 className="font-display text-xl tracking-tight">Recent calls</h3>
-        <div className="mt-3 divide-y divide-border rounded-[20px] border border-border bg-surface">
+        <div className="mt-3 divide-y divide-border surface-card">
           {data.calls.length === 0 ? (
             <p className="px-5 py-8 text-sm text-muted">No calls yet. Publish an agent and talk to it from the studio.</p>
           ) : (
