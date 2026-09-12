@@ -1,0 +1,203 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight, Globe2, PhoneCall, ShieldCheck } from "lucide-react";
+import { SiteShell } from "@/components/site/shell";
+import { VoiceDemo } from "@/components/voice/demo";
+import { Button } from "@/components/ui/button";
+import { useI18n } from "@/lib/locale";
+import { GUARDRAILS, INTEGRATIONS, LOCALES, PLANS, USE_CASES, VOICES } from "@/lib/product";
+import { formatMoney } from "@/lib/utils";
+
+export const Route = createFileRoute("/")({
+  component: Home,
+});
+
+function Home() {
+  const { t } = useI18n();
+  return (
+    <SiteShell>
+      <section className="border-b border-border bg-ink text-bg">
+        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+          <div>
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-bg/55">{t("kicker")}</p>
+            <h1 className="mt-4 font-display text-4xl tracking-tight sm:text-6xl">{t("heroTitle")}</h1>
+            <p className="mt-5 max-w-xl text-base text-bg/70 sm:text-lg">{t("heroLead")}</p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Button asChild size="lg">
+                <Link to="/signup">{t("start")}</Link>
+              </Button>
+              <Button asChild size="lg" variant="secondary" className="border-bg/20 bg-transparent text-bg hover:bg-bg/10">
+                <a href="#demo">{t("demo")}</a>
+              </Button>
+            </div>
+            <dl className="mt-10 grid grid-cols-3 gap-4 text-sm">
+              <div>
+                <dt className="text-bg/50">Languages</dt>
+                <dd className="font-display text-2xl">25</dd>
+              </div>
+              <div>
+                <dt className="text-bg/50">Voices</dt>
+                <dd className="font-display text-2xl">{VOICES.length}</dd>
+              </div>
+              <div>
+                <dt className="text-bg/50">Coverage</dt>
+                <dd className="font-display text-2xl">24/7</dd>
+              </div>
+            </dl>
+          </div>
+          <div id="demo">
+            <VoiceDemo
+              labels={{
+                listen: t("listen"),
+                talk: t("talk"),
+                talking: t("talking"),
+                thinking: t("thinking"),
+                assistant: t("assistant"),
+                sales: t("sales"),
+                support: t("support"),
+              }}
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="product" className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+        <p className="text-xs font-medium uppercase tracking-[0.18em] text-subtle">{t("how")}</p>
+        <h2 className="mt-3 max-w-2xl font-display text-3xl tracking-tight sm:text-4xl">
+          Live on a local number before lunch.
+        </h2>
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
+          {[
+            { t: t("how1t"), d: t("how1"), icon: Globe2 },
+            { t: t("how2t"), d: t("how2"), icon: ShieldCheck },
+            { t: t("how3t"), d: t("how3"), icon: PhoneCall },
+          ].map((step, i) => (
+            <article key={step.t} className="rounded-[24px] border border-border bg-surface p-6">
+              <p className="text-xs uppercase tracking-[0.16em] text-subtle">0{i + 1}</p>
+              <step.icon className="mt-4 size-5 text-primary" />
+              <h3 className="mt-4 font-display text-2xl tracking-tight">{step.t}</h3>
+              <p className="mt-2 text-sm text-muted">{step.d}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-y border-border bg-bg-elevated">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+          <div className="flex items-end justify-between gap-6">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-subtle">{t("navUse")}</p>
+              <h2 className="mt-3 font-display text-3xl tracking-tight sm:text-4xl">Built for the calls that pay.</h2>
+            </div>
+            <Link to="/use-cases" className="hidden items-center gap-1 text-sm text-muted hover:text-fg sm:inline-flex">
+              All use cases <ArrowRight className="size-4" />
+            </Link>
+          </div>
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {USE_CASES.slice(0, 3).map((u) => (
+              <article key={u.id} className="rounded-[24px] border border-border bg-surface p-6">
+                <p className="text-xs uppercase tracking-[0.16em] text-primary">{u.kicker}</p>
+                <h3 className="mt-3 font-display text-2xl tracking-tight">{u.name}</h3>
+                <p className="mt-2 text-sm text-muted">{u.summary}</p>
+                <ul className="mt-4 space-y-2 text-sm text-fg">
+                  {u.bullets.map((b) => (
+                    <li key={b} className="border-t border-border pt-2">
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+        <p className="text-xs font-medium uppercase tracking-[0.18em] text-subtle">{t("navLang")}</p>
+        <h2 className="mt-3 font-display text-3xl tracking-tight">{t("langsTitle")}</h2>
+        <p className="mt-3 max-w-2xl text-sm text-muted">{t("langsLead")}</p>
+        <div className="mt-8 grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-5">
+          {LOCALES.map((l) => (
+            <div key={l.code} className="rounded-[16px] border border-border bg-surface px-3 py-3">
+              <p className="text-sm text-fg">{l.native}</p>
+              <p className="text-xs text-subtle">{l.name}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-y border-border bg-bg-elevated">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-subtle">{t("navInt")}</p>
+          <h2 className="mt-3 font-display text-3xl tracking-tight">{t("intTitle")}</h2>
+          <p className="mt-3 max-w-2xl text-sm text-muted">{t("intLead")}</p>
+          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {INTEGRATIONS.filter((i) => i.group === "Google").map((i) => (
+              <article key={i.id} className="rounded-[20px] border border-border bg-surface p-5">
+                <p className="text-xs uppercase tracking-[0.14em] text-primary">{i.group}</p>
+                <h3 className="mt-2 font-display text-xl tracking-tight">{i.name}</h3>
+                <p className="mt-1 text-sm text-muted">{i.blurb}</p>
+              </article>
+            ))}
+          </div>
+          <p className="mt-6 text-sm text-muted">
+            Also: {INTEGRATIONS.filter((i) => i.group !== "Google")
+              .map((i) => i.name)
+              .join(", ")}
+            .
+          </p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+        <p className="text-xs font-medium uppercase tracking-[0.18em] text-subtle">{t("navPricing")}</p>
+        <h2 className="mt-3 font-display text-3xl tracking-tight">{t("pricingTitle")}</h2>
+        <p className="mt-3 max-w-2xl text-sm text-muted">{t("pricingLead")}</p>
+        <div className="mt-10 grid gap-4 lg:grid-cols-3">
+          {PLANS.map((p) => (
+            <article
+              key={p.id}
+              className={`rounded-[28px] border p-6 ${p.popular ? "border-ink bg-ink text-bg" : "border-border bg-surface"}`}
+            >
+              <div className="flex items-baseline justify-between">
+                <h3 className="font-display text-2xl tracking-tight">{p.name}</h3>
+                {"popular" in p && p.popular ? (
+                  <span className="text-xs uppercase tracking-[0.14em] text-bg/60">{t("popular")}</span>
+                ) : null}
+              </div>
+              <p className={`mt-4 font-display text-4xl tracking-tight ${p.popular ? "text-bg" : "text-fg"}`}>
+                {formatMoney(p.monthly)}
+                <span className={`text-base font-sans ${p.popular ? "text-bg/60" : "text-muted"}`}>{t("perMonth")}</span>
+              </p>
+              <p className={`mt-1 text-sm ${p.popular ? "text-bg/65" : "text-muted"}`}>{p.blurb}</p>
+              <ul className="mt-6 space-y-2 text-sm">
+                {p.features.map((f) => (
+                  <li key={f} className={p.popular ? "text-bg/85" : "text-fg"}>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <Button asChild className="mt-8 w-full" variant={p.popular ? "secondary" : "primary"}>
+                <Link to="/signup">{t("startTrial")}</Link>
+              </Button>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-t border-border bg-ink text-bg">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+          <h2 className="font-display text-3xl tracking-tight">{t("guardTitle")}</h2>
+          <p className="mt-3 max-w-xl text-sm text-bg/65">{t("guardLead")}</p>
+          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            {GUARDRAILS.map((g) => (
+              <div key={g.id} className="rounded-[16px] border border-bg/10 px-4 py-4">
+                <p className="text-sm text-bg">{g.label}</p>
+                <p className="mt-1 text-xs text-bg/55">{g.hint}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </SiteShell>
+  );
+}

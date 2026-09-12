@@ -1,0 +1,40 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { SiteShell, PageHero } from "@/components/site/shell";
+import { Button } from "@/components/ui/button";
+import { USE_CASES } from "@/lib/product";
+import { useI18n } from "@/lib/locale";
+
+export const Route = createFileRoute("/use-cases")({
+  component: UseCasesPage,
+  head: () => ({ meta: [{ title: "Use cases — Roamr voice agents 24/7" }] }),
+});
+
+function UseCasesPage() {
+  const { t } = useI18n();
+  return (
+    <SiteShell>
+      <PageHero kicker={t("navUse")} title="Personal assistant, sales, support — then the rest of the desk." lead="High-value voice work: a chief of staff, a closer, and a night desk that never clocks out." />
+      <div className="mx-auto grid max-w-6xl gap-4 px-4 py-14 sm:px-6 md:grid-cols-2">
+        {USE_CASES.map((u) => (
+          <article key={u.id} className="rounded-[28px] border border-border bg-surface p-6">
+            <p className="text-xs uppercase tracking-[0.16em] text-primary">{u.kicker}</p>
+            <h2 className="mt-3 font-display text-3xl tracking-tight">{u.name}</h2>
+            <p className="mt-2 text-sm text-muted">{u.summary}</p>
+            <ul className="mt-5 space-y-2 text-sm">
+              {u.bullets.map((b) => (
+                <li key={b} className="border-t border-border pt-2">
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+      <div className="mx-auto max-w-6xl px-4 pb-16 sm:px-6">
+        <Button asChild>
+          <Link to="/signup">{t("start")}</Link>
+        </Button>
+      </div>
+    </SiteShell>
+  );
+}
