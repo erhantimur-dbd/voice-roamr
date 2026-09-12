@@ -1,12 +1,12 @@
 {
-  "name": "roamr-mobile",
+  "name": "voice-roamr",
   "private": true,
   "author": "erhantimur-dbd <erhan@digitalbydefault.co.uk>",
   "description": "Roamr voice agents 24/7 — global Grok voice agents wherever life takes you.",
-  "homepage": "https://roamr-mobile.vercel.app",
+  "homepage": "https://roamr-voice.vercel.app",
   "repository": {
     "type": "git",
-    "url": "https://github.com/erhantimur-dbd/roamr-mobile.git"
+    "url": "https://github.com/erhantimur-dbd/voice-roamr.git"
   },
   "sideEffects": false,
   "type": "module",
