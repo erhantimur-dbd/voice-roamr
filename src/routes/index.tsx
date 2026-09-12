@@ -87,7 +87,10 @@ function Home() {
             <span aria-hidden="true" className="text-zinc-400">
               ·
             </span>
-            <span>Twilio</span>
+            <span>
+              Twilio{" "}
+              <span className="normal-case tracking-[0.04em] text-subtle">(Coming)</span>
+            </span>
             <span aria-hidden="true" className="text-zinc-400">
               ·
             </span>
