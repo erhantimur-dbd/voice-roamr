@@ -17,6 +17,13 @@ const HERO = {
   sub: "Roamr answers on your number, books or escalates to you, in the languages your customers speak.",
 } as const;
 
+const PROOF = [
+  "Real phone number — not a chat widget",
+  "Multilingual, 24/7",
+  "Answer · book · escalate",
+  "Add global numbers to your voice agents",
+] as const;
+
 function Home() {
   const { t } = useI18n();
   return (
@@ -35,18 +42,18 @@ function Home() {
                 <a href="#demo">{t("demo")}</a>
               </Button>
             </div>
-            <p className="mt-10 max-w-xl text-[11px] font-medium tracking-[0.04em] text-muted">
-              Real phone number — not a chat widget
-              <span aria-hidden="true" className="text-zinc-400">
-                {" "}
-                ·{" "}
-              </span>
-              Multilingual, 24/7
-              <span aria-hidden="true" className="text-zinc-400">
-                {" "}
-                ·{" "}
-              </span>
-              Answer · book · escalate
+            <p className="mt-10 max-w-2xl text-[11px] font-medium tracking-[0.04em] text-muted">
+              {PROOF.map((item, i) => (
+                <span key={item}>
+                  {i > 0 ? (
+                    <span aria-hidden="true" className="text-zinc-400">
+                      {" "}
+                      ·{" "}
+                    </span>
+                  ) : null}
+                  {item}
+                </span>
+              ))}
             </p>
           </div>
           <div id="demo" className="relative">
@@ -67,21 +74,30 @@ function Home() {
       </section>
 
       <section className="border-b border-border bg-paper">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-2 px-4 py-4 text-[11px] font-medium uppercase tracking-[0.16em] text-muted sm:px-6">
-          <span className="text-subtle">Stack</span>
-          <span>Grok 2.0</span>
-          <span aria-hidden="true" className="text-zinc-400">
-            ·
-          </span>
-          <span>Twilio</span>
-          <span aria-hidden="true" className="text-zinc-400">
-            ·
-          </span>
-          <span>Google Workspace</span>
-          <span aria-hidden="true" className="text-zinc-400">
-            ·
-          </span>
-          <span>25 languages</span>
+        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-4 sm:px-6">
+          <p className="text-[11px] font-medium tracking-[0.04em] text-fg">
+            Global numbers — your voice agent, a real local number worldwide
+          </p>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[11px] font-medium uppercase tracking-[0.16em] text-muted">
+            <span className="text-subtle">Stack</span>
+            <span>Grok 2.0</span>
+            <span aria-hidden="true" className="text-zinc-400">
+              ·
+            </span>
+            <span>Twilio</span>
+            <span aria-hidden="true" className="text-zinc-400">
+              ·
+            </span>
+            <span>Google Workspace</span>
+            <span aria-hidden="true" className="text-zinc-400">
+              ·
+            </span>
+            <span>25 languages</span>
+            <span aria-hidden="true" className="text-zinc-400">
+              ·
+            </span>
+            <span>Global numbers</span>
+          </div>
         </div>
       </section>
 
