@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell, PageHero } from "@/components/site/shell";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { INTEGRATIONS } from "@/lib/product";
 import { useI18n } from "@/lib/locale";
@@ -22,7 +23,10 @@ function IntegrationsPage() {
             <div className="mt-4 grid gap-3 md:grid-cols-2">
               {INTEGRATIONS.filter((i) => i.group === g).map((i) => (
                 <article key={i.id} className="surface-card p-5">
-                  <h3 className="font-display text-xl tracking-tight">{i.name}</h3>
+                  <div className="flex items-start justify-between gap-3">
+                    <h3 className="font-display text-xl tracking-tight">{i.name}</h3>
+                    <Badge tone={i.status === "live" ? "live" : "muted"}>{i.status === "live" ? "Live" : "Coming"}</Badge>
+                  </div>
                   <p className="mt-1 text-sm text-muted">{i.blurb}</p>
                 </article>
               ))}

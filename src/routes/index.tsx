@@ -17,6 +17,17 @@ const HERO = {
   sub: "Roamr answers on your number, books or escalates to you, in the languages your customers speak.",
 } as const;
 
+const HERO_ADDON = "Give each agent a real local number in the markets you sell into.";
+
+const PROOF = [
+  "Real phone number — not a chat widget",
+  "Multilingual, 24/7",
+  "Answer · book · escalate",
+  "Global numbers for your voice agents — get a local number where your customers are.",
+] as const;
+
+const DID_CHROME = "Local numbers where your customers are — not chat widgets.";
+
 function Home() {
   const { t } = useI18n();
   return (
@@ -27,6 +38,7 @@ function Home() {
             <p className="text-xs font-medium tracking-[0.04em] text-subtle">{HERO.eyebrow}</p>
             <h1 className="rule-double mt-4 font-display text-4xl tracking-tight sm:text-6xl">{HERO.title}</h1>
             <p className="mt-5 max-w-xl text-base text-muted sm:text-lg">{HERO.sub}</p>
+            <p className="mt-3 max-w-xl text-sm text-muted">{HERO_ADDON}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg">
                 <Link to="/signup">{t("start")}</Link>
@@ -35,18 +47,18 @@ function Home() {
                 <a href="#demo">{t("demo")}</a>
               </Button>
             </div>
-            <p className="mt-10 max-w-xl text-[11px] font-medium tracking-[0.04em] text-muted">
-              Real phone number — not a chat widget
-              <span aria-hidden="true" className="text-zinc-400">
-                {" "}
-                ·{" "}
-              </span>
-              Multilingual, 24/7
-              <span aria-hidden="true" className="text-zinc-400">
-                {" "}
-                ·{" "}
-              </span>
-              Answer · book · escalate
+            <p className="mt-10 max-w-2xl text-[11px] font-medium tracking-[0.04em] text-muted">
+              {PROOF.map((item, i) => (
+                <span key={item}>
+                  {i > 0 ? (
+                    <span aria-hidden="true" className="text-zinc-400">
+                      {" "}
+                      ·{" "}
+                    </span>
+                  ) : null}
+                  {item}
+                </span>
+              ))}
             </p>
           </div>
           <div id="demo" className="relative">
@@ -67,21 +79,31 @@ function Home() {
       </section>
 
       <section className="border-b border-border bg-paper">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-2 px-4 py-4 text-[11px] font-medium uppercase tracking-[0.16em] text-muted sm:px-6">
-          <span className="text-subtle">Stack</span>
-          <span>Grok 2.0</span>
-          <span aria-hidden="true" className="text-zinc-400">
-            ·
-          </span>
-          <span>Twilio</span>
-          <span aria-hidden="true" className="text-zinc-400">
-            ·
-          </span>
-          <span>Google Workspace</span>
-          <span aria-hidden="true" className="text-zinc-400">
-            ·
-          </span>
-          <span>25 languages</span>
+        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-4 sm:px-6">
+          <p className="text-[11px] font-medium tracking-[0.04em] text-fg">{DID_CHROME}</p>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[11px] font-medium uppercase tracking-[0.16em] text-muted">
+            <span className="text-subtle">Stack</span>
+            <span>Grok 2.0</span>
+            <span aria-hidden="true" className="text-zinc-400">
+              ·
+            </span>
+            <span>
+              Twilio{" "}
+              <span className="normal-case tracking-[0.04em] text-subtle">(Coming)</span>
+            </span>
+            <span aria-hidden="true" className="text-zinc-400">
+              ·
+            </span>
+            <span>Google Workspace</span>
+            <span aria-hidden="true" className="text-zinc-400">
+              ·
+            </span>
+            <span>{LOCALES.length} languages</span>
+            <span aria-hidden="true" className="text-zinc-400">
+              ·
+            </span>
+            <span>Global numbers</span>
+          </div>
         </div>
       </section>
 
@@ -156,7 +178,7 @@ function Home() {
           <h2 className="mt-3 font-display text-3xl tracking-tight">{t("intTitle")}</h2>
           <p className="mt-3 max-w-2xl text-sm text-muted">{t("intLead")}</p>
           <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {INTEGRATIONS.filter((i) => i.group === "Google").map((i) => (
+            {INTEGRATIONS.filter((i) => i.status === "live").map((i) => (
               <article key={i.id} className="surface-card p-5">
                 <p className="text-xs uppercase tracking-[0.14em] text-muted">{i.group}</p>
                 <h3 className="mt-2 font-display text-xl tracking-tight">{i.name}</h3>
@@ -165,7 +187,7 @@ function Home() {
             ))}
           </div>
           <p className="mt-6 text-sm text-muted">
-            Also: {INTEGRATIONS.filter((i) => i.group !== "Google")
+            Coming: {INTEGRATIONS.filter((i) => i.status === "coming")
               .map((i) => i.name)
               .join(", ")}
             .
