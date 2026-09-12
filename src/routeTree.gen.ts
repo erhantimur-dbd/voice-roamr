@@ -21,6 +21,7 @@ import { Route as LoginRouteImport } from './routes/login'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as SecurityRouteImport } from './routes/security'
 import { Route as SignupRouteImport } from './routes/signup'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as UseCasesRouteImport } from './routes/use-cases'
 import { Route as VoicesRouteImport } from './routes/voices'
 import { Route as AdminIndexRouteImport } from './routes/admin/index'
@@ -102,6 +103,11 @@ const SecurityRoute = SecurityRouteImport.update({
 const SignupRoute = SignupRouteImport.update({
   id: '/signup',
   path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const UseCasesRoute = UseCasesRouteImport.update({
@@ -228,6 +234,7 @@ export interface FileRoutesByFullPath {
   '/pricing': typeof PricingRoute
   '/security': typeof SecurityRoute
   '/signup': typeof SignupRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/use-cases': typeof UseCasesRoute
   '/voices': typeof VoicesRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
@@ -262,6 +269,7 @@ export interface FileRoutesByTo {
   '/pricing': typeof PricingRoute
   '/security': typeof SecurityRoute
   '/signup': typeof SignupRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/use-cases': typeof UseCasesRoute
   '/voices': typeof VoicesRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
@@ -299,6 +307,7 @@ export interface FileRoutesById {
   '/pricing': typeof PricingRoute
   '/security': typeof SecurityRoute
   '/signup': typeof SignupRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/use-cases': typeof UseCasesRoute
   '/voices': typeof VoicesRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
@@ -337,6 +346,7 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/security'
     | '/signup'
+    | '/sitemap.xml'
     | '/use-cases'
     | '/voices'
     | '/admin/analytics'
@@ -371,6 +381,7 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/security'
     | '/signup'
+    | '/sitemap.xml'
     | '/use-cases'
     | '/voices'
     | '/admin/analytics'
@@ -407,6 +418,7 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/security'
     | '/signup'
+    | '/sitemap.xml'
     | '/use-cases'
     | '/voices'
     | '/admin/analytics'
@@ -444,6 +456,7 @@ export interface RootRouteChildren {
   PricingRoute: typeof PricingRoute
   SecurityRoute: typeof SecurityRoute
   SignupRoute: typeof SignupRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   UseCasesRoute: typeof UseCasesRoute
   VoicesRoute: typeof VoicesRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
@@ -533,6 +546,13 @@ declare module '@tanstack/react-router' {
       path: '/signup'
       fullPath: '/signup'
       preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/use-cases': {
@@ -793,6 +813,7 @@ const rootRouteChildren: RootRouteChildren = {
   PricingRoute: PricingRoute,
   SecurityRoute: SecurityRoute,
   SignupRoute: SignupRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   UseCasesRoute: UseCasesRoute,
   VoicesRoute: VoicesRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
