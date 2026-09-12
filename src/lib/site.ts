@@ -1,7 +1,7 @@
 export const SITE = {
   name: "Roamr",
   product: "Roamr voice agents 24/7",
-  tagline: "Global Voice agents wherever life takes you.",
+  tagline: "AI voice agent with a real phone number that keeps the business going 24/7.",
   domain: "roamr.mobile",
   url: "https://www.roamr.mobile",
   liveUrl: "https://roamr-mobile.vercel.app",
@@ -20,9 +20,9 @@ export const SITE = {
 } as const;
 
 export const META = {
-  title: "Roamr voice agents 24/7 — Global voice agents wherever life takes you",
+  title: "Roamr — AI voice agent with a real phone number, 24/7",
   description:
-    "Self-serve Grok 2.0 voice agents for personal assistants, sales and support. 25 languages, custom voices, knowledge base, guardrails and local phone numbers. Live in minutes.",
+    "AI voice agent with a real phone number that keeps the business going 24/7. Multilingual. Never miss an opportunity.",
   keywords:
-    "voice AI agent, Grok voice, Grok 2.0, AI phone agent, multilingual voice agent, personal assistant AI, AI sales agent, AI customer support, Twilio voice AI, Roamr",
+    "AI voice agent, real phone number, multilingual voice agent, 24/7 phone agent, AI phone agent, Roamr",
 } as const;

@@ -18,7 +18,7 @@ export const EN = {
   kicker: "AI voice agent · real phone number",
   heroTitle: "Keep your business going 24/7 — never miss an opportunity.",
   heroLead:
-    "Roamr answers on your number, books or escalates to you, in the languages your customers speak.",
+    "AI voice agent with a real phone number that keeps the business going 24/7. Multilingual. Never miss an opportunity.",
   pricingLead: "Monthly figures on this page. Annual is available at checkout — same plans, billed yearly.",
   listen: "Play sample",
   talk: "Talk to it",
