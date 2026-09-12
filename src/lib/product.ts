@@ -62,8 +62,12 @@ export const USE_CASES = [
     id: "assistant",
     name: "AI receptionist",
     kicker: "High value",
-    summary: "Answers the line, books the calendar, screens callers — a front desk that never misses.",
-    bullets: ["Morning brief from Calendar and Gmail", "Books and moves meetings", "Screens unknown callers"],
+    summary: "Answers the phone, books the slot, or escalates to you.",
+    bullets: [
+      "Answers every call on your number",
+      "Books and moves appointments",
+      "Escalates or transfers to a human",
+    ],
   },
   {
     id: "sales",
@@ -260,9 +264,9 @@ export const DEMO_SCRIPTS: Record<string, { title: string; language: string; voi
     title: "AI receptionist",
     language: "en",
     voice: "eve",
-    line: "Good morning. You have three meetings today. The first is with Priya at ten, then a flight hold for Friday. Shall I brief you, or move the ten o’clock?",
+    line: "Thanks for calling. I can book the next slot, take a message, or put you through now. What do you need?",
     prompt:
-      "You are a private personal assistant on a phone call. Be concise, warm, and specific. Help with calendar, travel, and follow-ups. Never invent private facts; ask if unsure.",
+      "You are an AI receptionist on a phone call. Be concise, warm, and specific. Answer the line, book or move appointments, and escalate or transfer to a human. Never invent private facts; ask if unsure.",
   },
   sales: {
     title: "Sales",
