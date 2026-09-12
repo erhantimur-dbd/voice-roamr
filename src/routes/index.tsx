@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Globe2, PhoneCall, ShieldCheck } from "lucide-react";
 import { SiteShell } from "@/components/site/shell";
 import { VoiceDemo } from "@/components/voice/demo";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useI18n } from "@/lib/locale";
 import { GUARDRAILS, INTEGRATIONS, LOCALES, PLANS, USE_CASES } from "@/lib/product";
@@ -180,16 +181,23 @@ function Home() {
           <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {INTEGRATIONS.filter((i) => i.status === "live").map((i) => (
               <article key={i.id} className="surface-card p-5">
-                <p className="text-xs uppercase tracking-[0.14em] text-muted">{i.group}</p>
+                <div className="flex items-start justify-between gap-3">
+                  <p className="text-xs uppercase tracking-[0.14em] text-muted">{i.group}</p>
+                  <Badge tone="live">Live</Badge>
+                </div>
                 <h3 className="mt-2 font-display text-xl tracking-tight">{i.name}</h3>
                 <p className="mt-1 text-sm text-muted">{i.blurb}</p>
               </article>
             ))}
           </div>
           <p className="mt-6 text-sm text-muted">
-            Coming: {INTEGRATIONS.filter((i) => i.status === "coming")
-              .map((i) => i.name)
-              .join(", ")}
+            {INTEGRATIONS.filter((i) => i.status === "coming").map((i, idx) => (
+              <span key={i.id}>
+                {idx > 0 ? ", " : null}
+                {i.name}{" "}
+                <span className="text-subtle">(Coming)</span>
+              </span>
+            ))}
             .
           </p>
         </div>
