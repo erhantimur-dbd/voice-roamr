@@ -175,7 +175,7 @@ function Home() {
           <h2 className="mt-3 font-display text-3xl tracking-tight">{t("intTitle")}</h2>
           <p className="mt-3 max-w-2xl text-sm text-muted">{t("intLead")}</p>
           <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {INTEGRATIONS.filter((i) => i.group === "Google").map((i) => (
+            {INTEGRATIONS.filter((i) => i.status === "live").map((i) => (
               <article key={i.id} className="surface-card p-5">
                 <p className="text-xs uppercase tracking-[0.14em] text-muted">{i.group}</p>
                 <h3 className="mt-2 font-display text-xl tracking-tight">{i.name}</h3>
@@ -184,7 +184,7 @@ function Home() {
             ))}
           </div>
           <p className="mt-6 text-sm text-muted">
-            Also: {INTEGRATIONS.filter((i) => i.group !== "Google")
+            Coming: {INTEGRATIONS.filter((i) => i.status === "coming")
               .map((i) => i.name)
               .join(", ")}
             .

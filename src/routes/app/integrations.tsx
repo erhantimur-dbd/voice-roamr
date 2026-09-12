@@ -35,7 +35,7 @@ function IntegrationsConsole() {
     <div>
       <h2 className="font-display text-3xl tracking-tight">Integrations</h2>
       <p className="mt-2 max-w-xl text-sm text-muted">
-        Google Workspace first. Connect Calendar, Gmail and Drive so the agent can book, draft and cite. Everything else is one toggle away.
+        Google Workspace is live. Other connectors are Coming — listed is not wired.
       </p>
       <div className="mt-4">
         <Button type="button" variant="secondary" onClick={() => void peekGoogle()}>
@@ -53,12 +53,16 @@ function IntegrationsConsole() {
                   <p className="text-xs uppercase tracking-[0.14em] text-subtle">{i.group}</p>
                   <h3 className="mt-1 font-display text-xl tracking-tight">{i.name}</h3>
                 </div>
-                <Badge tone={on ? "live" : "muted"}>{on ? "On" : "Off"}</Badge>
+                <Badge tone={i.status === "coming" ? "muted" : on ? "live" : "muted"}>
+                  {i.status === "coming" ? "Coming" : on ? "On" : "Off"}
+                </Badge>
               </div>
               <p className="mt-2 text-sm text-muted">{i.blurb}</p>
-              <Button type="button" size="sm" className="mt-4" variant={on ? "secondary" : "primary"} onClick={() => void toggle(i.id, !on)}>
-                {on ? "Disconnect" : "Connect"}
-              </Button>
+              {i.status === "coming" ? null : (
+                <Button type="button" size="sm" className="mt-4" variant={on ? "secondary" : "primary"} onClick={() => void toggle(i.id, !on)}>
+                  {on ? "Disconnect" : "Connect"}
+                </Button>
+              )}
             </article>
           );
         })}

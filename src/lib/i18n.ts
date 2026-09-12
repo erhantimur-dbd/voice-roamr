@@ -48,7 +48,7 @@ export const EN = {
   langsTitle: "Twenty-three languages. One agent.",
   langsLead: "Grok Voice is natively multilingual. It answers in the language it hears, or the one you lock.",
   intTitle: "Google first. Everything else after.",
-  intLead: "Calendar, Gmail and Drive out of the box. CRM, payments, telephony and webhooks when you need them.",
+  intLead: "Google Workspace is live. Other connectors are Coming — listed is not wired.",
   voicesTitle: "Flagship Grok voices, plus yours.",
   voicesLead: "Sixteen production voices, six types, and cloning when you want the brand to sound like itself.",
   guardTitle: "Guardrails before it ever speaks.",

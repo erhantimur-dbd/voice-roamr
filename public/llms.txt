@@ -8,7 +8,7 @@ Roamr is a self-serve, multi-tenant Grok 2.0 voice-agent platform. Website: http
 - Personal assistant, sales, support and other high-value voice agents
 - Full Grok voice stack: grok-voice-think-fast-2.0 speech-to-speech, TTS, STT
 - 23 languages, 16 flagship voices, custom / cloned voices
-- Knowledge base, guardrails, Google Workspace and other integrations
+- Knowledge base, guardrails, live Google Workspace; other connectors Coming
 - Twilio local numbers
 - Client console + owner operator desk
 - Stripe billing, monthly or annual
