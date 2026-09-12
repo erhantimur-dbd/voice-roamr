@@ -17,12 +17,16 @@ const HERO = {
   sub: "Roamr answers on your number, books or escalates to you, in the languages your customers speak.",
 } as const;
 
+const HERO_ADDON = "Give each agent a real local number in the markets you sell into.";
+
 const PROOF = [
   "Real phone number — not a chat widget",
   "Multilingual, 24/7",
   "Answer · book · escalate",
-  "Add global numbers to your voice agents",
+  "Global numbers for your voice agents — get a local number where your customers are.",
 ] as const;
+
+const DID_CHROME = "Local numbers where your customers are — not chat widgets.";
 
 function Home() {
   const { t } = useI18n();
@@ -34,6 +38,7 @@ function Home() {
             <p className="text-xs font-medium tracking-[0.04em] text-subtle">{HERO.eyebrow}</p>
             <h1 className="rule-double mt-4 font-display text-4xl tracking-tight sm:text-6xl">{HERO.title}</h1>
             <p className="mt-5 max-w-xl text-base text-muted sm:text-lg">{HERO.sub}</p>
+            <p className="mt-3 max-w-xl text-sm text-muted">{HERO_ADDON}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg">
                 <Link to="/signup">{t("start")}</Link>
@@ -75,9 +80,7 @@ function Home() {
 
       <section className="border-b border-border bg-paper">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-4 sm:px-6">
-          <p className="text-[11px] font-medium tracking-[0.04em] text-fg">
-            Global numbers — your voice agent, a real local number worldwide
-          </p>
+          <p className="text-[11px] font-medium tracking-[0.04em] text-fg">{DID_CHROME}</p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[11px] font-medium uppercase tracking-[0.16em] text-muted">
             <span className="text-subtle">Stack</span>
             <span>Grok 2.0</span>
@@ -92,7 +95,7 @@ function Home() {
             <span aria-hidden="true" className="text-zinc-400">
               ·
             </span>
-            <span>25 languages</span>
+            <span>{LOCALES.length} languages</span>
             <span aria-hidden="true" className="text-zinc-400">
               ·
             </span>

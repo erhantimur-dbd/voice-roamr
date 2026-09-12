@@ -2,7 +2,7 @@
 
 Global Voice agents wherever life takes you.
 
-Self-serve Grok 2.0 voice agents for personal assistants, sales and support. Twenty-five languages, custom voices, knowledge bases, guardrails, Google Workspace, and local Twilio numbers.
+Self-serve Grok 2.0 voice agents for personal assistants, sales and support. Twenty-three languages, custom voices, knowledge bases, guardrails, Google Workspace, and local Twilio numbers.
 
 Live: [roamr-mobile.vercel.app](https://roamr-mobile.vercel.app) · Site: [www.roamr.mobile](https://www.roamr.mobile)
 

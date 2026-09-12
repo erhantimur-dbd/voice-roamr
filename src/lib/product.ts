@@ -24,8 +24,6 @@ export const LOCALES = [
   { code: "cs", name: "Czech", native: "Čeština", tts: "cs", dir: "ltr" },
   { code: "ro", name: "Romanian", native: "Română", tts: "ro", dir: "ltr" },
   { code: "uk", name: "Ukrainian", native: "Українська", tts: "uk", dir: "ltr" },
-  { code: "el", name: "Greek", native: "Ελληνικά", tts: "el", dir: "ltr" },
-  { code: "he", name: "Hebrew", native: "עברית", tts: "he", dir: "rtl" },
   { code: "bn", name: "Bengali", native: "বাংলা", tts: "bn", dir: "ltr" },
 ] as const;
 
@@ -85,7 +83,7 @@ export const USE_CASES = [
     id: "reception",
     name: "Reception",
     kicker: "Front desk",
-    summary: "A local number that greets, routes, and takes a message in 25 languages.",
+    summary: "A local number that greets, routes, and takes a message in 23 languages.",
     bullets: ["Smart routing by intent", "Bilingual switchboard", "Missed-call text-back"],
   },
   {
@@ -180,7 +178,7 @@ export const PLANS = [
       "5 live agents",
       "1,000 voice minutes / mo",
       "3 local numbers",
-      "All 25 languages",
+      "All 23 languages",
       "Knowledge base",
       "Google Workspace tools",
       "Advanced guardrails",
