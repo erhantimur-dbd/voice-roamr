@@ -22,7 +22,7 @@ export const SITE = {
 export const META = {
   title: "Roamr — Keep your business going 24/7",
   description:
-    "Roamr answers on your number, books or escalates to you, in the languages your customers speak.",
+    "AI voice agent with a real phone number that keeps the business going 24/7. Multilingual. Never miss an opportunity.",
   keywords:
     "AI voice agent, real phone number, multilingual voice agent, 24/7 phone agent, AI phone agent, Roamr",
 } as const;
