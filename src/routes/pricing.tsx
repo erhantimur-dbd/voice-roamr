@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { ENTERPRISE, PLANS } from "@/lib/product";
 import { useI18n } from "@/lib/locale";
 import { formatMoney } from "@/lib/utils";
-import { SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/pricing")({
   component: PricingPage,
@@ -54,7 +53,7 @@ function PricingPage() {
                 </ul>
                 <p className={`mt-4 text-xs ${p.popular ? "text-paper/55" : "text-subtle"}`}>Overage {formatMoney(p.overage)} / min</p>
                 <Button asChild className="mt-8 w-full" variant={p.popular ? "secondary" : "primary"}>
-                  <Link to="/signup">{t("startTrial")}</Link>
+                  <Link to="/signup">{t("start")}</Link>
                 </Button>
               </article>
             );
@@ -66,7 +65,7 @@ function PricingPage() {
             <p className="mt-2 max-w-xl text-sm text-muted">{ENTERPRISE.blurb}</p>
           </div>
           <Button asChild className="mt-4 md:mt-0">
-            <a href={`mailto:${SITE.emails.sales}`}>{t("talkSales")}</a>
+            <Link to="/contact">{t("scheduleDemo")}</Link>
           </Button>
         </article>
       </div>

@@ -113,7 +113,7 @@ export async function getOrCreateWorkspace(userId: string, email?: string | null
       template: "welcome",
       workspaceId: id,
       userId,
-      text: `Welcome to ${name}. Your 7-day trial includes 50 minutes on Grok 2.0 voice. Open the console to publish your first agent.`,
+      text: `Welcome to ${name}. Open the console to publish your first agent on Grok 2.0 voice.`,
     }).catch(() => {});
   }
   const created = await sql<WorkspaceRow>`select * from workspaces where id = ${id} limit 1`;

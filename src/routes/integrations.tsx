@@ -1,7 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { SiteShell, PageHero } from "@/components/site/shell";
+import { createFileRoute } from "@tanstack/react-router";
+import { MarketingCtas, SiteShell, PageHero } from "@/components/site/shell";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { INTEGRATIONS } from "@/lib/product";
 import { useI18n } from "@/lib/locale";
 
@@ -33,9 +32,7 @@ function IntegrationsPage() {
             </div>
           </section>
         ))}
-        <Button asChild>
-          <Link to="/signup">{t("start")}</Link>
-        </Button>
+        <MarketingCtas size="md" />
       </div>
     </SiteShell>
   );

@@ -74,6 +74,9 @@ export function SiteNav() {
           <div className="hidden sm:block">
             <AuthSlot />
           </div>
+          <Link to="/contact" className="hidden text-sm font-medium text-muted hover:text-fg lg:inline">
+            {t("scheduleDemo")}
+          </Link>
           <Button asChild size="sm" className="hidden sm:inline-flex">
             <Link to="/signup">{t("start")}</Link>
           </Button>
@@ -114,6 +117,9 @@ export function SiteNav() {
             >
               {t("start")}
             </Link>
+            <Link to="/contact" className="rounded-[12px] px-3 py-3 text-center text-sm" onClick={() => setOpen(false)}>
+              {t("scheduleDemo")}
+            </Link>
           </div>
         </div>
       ) : null}
@@ -145,6 +151,7 @@ export function SiteFooter() {
           <div className="mt-3 flex flex-col gap-2 text-sm text-muted">
             <Link to="/about">About</Link>
             <Link to="/security">Security</Link>
+            <Link to="/contact">{t("scheduleDemo")}</Link>
             <Link to="/contact">Contact</Link>
             <a href={SITE.social.x}>Press</a>
           </div>
@@ -152,6 +159,7 @@ export function SiteFooter() {
         <div>
           <p className="text-xs font-medium uppercase tracking-[0.16em] text-subtle">Account</p>
           <div className="mt-3 flex flex-col gap-2 text-sm text-muted">
+            <Link to="/signup">{t("start")}</Link>
             <Link to="/app">{t("console")}</Link>
             <Link to="/app/billing">Billing</Link>
             <Link to="/admin">{t("admin")}</Link>
@@ -181,6 +189,33 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <SiteNav />
       <div className="flex-1">{children}</div>
       <SiteFooter />
+    </div>
+  );
+}
+
+export function MarketingCtas({
+  size = "lg",
+  className,
+  hearAgent,
+}: {
+  size?: "sm" | "md" | "lg";
+  className?: string;
+  hearAgent?: boolean;
+}) {
+  const { t } = useI18n();
+  return (
+    <div className={cn("flex flex-col gap-3 sm:flex-row", className)}>
+      <Button asChild size={size}>
+        <Link to="/signup">{t("start")}</Link>
+      </Button>
+      <Button asChild size={size} variant="secondary">
+        <Link to="/contact">{t("scheduleDemo")}</Link>
+      </Button>
+      {hearAgent ? (
+        <Button asChild size={size} variant="ghost">
+          <a href="#demo">{t("demo")}</a>
+        </Button>
+      ) : null}
     </div>
   );
 }

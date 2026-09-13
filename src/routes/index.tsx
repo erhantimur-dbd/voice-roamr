@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Globe2, PhoneCall, ShieldCheck } from "lucide-react";
-import { SiteShell } from "@/components/site/shell";
+import { MarketingCtas, SiteShell } from "@/components/site/shell";
 import { VoiceDemo } from "@/components/voice/demo";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -40,14 +40,7 @@ function Home() {
             <h1 className="rule-double mt-4 font-display text-4xl tracking-tight sm:text-6xl">{HERO.title}</h1>
             <p className="mt-5 max-w-xl text-base text-muted sm:text-lg">{HERO.sub}</p>
             <p className="mt-3 max-w-xl text-sm text-muted">{HERO_ADDON}</p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg">
-                <Link to="/signup">{t("start")}</Link>
-              </Button>
-              <Button asChild size="lg" variant="secondary">
-                <a href="#demo">{t("demo")}</a>
-              </Button>
-            </div>
+            <MarketingCtas className="mt-8" hearAgent />
             <p className="mt-10 max-w-2xl text-[11px] font-medium tracking-[0.04em] text-muted">
               {PROOF.map((item, i) => (
                 <span key={item}>
@@ -233,7 +226,7 @@ function Home() {
                 ))}
               </ul>
               <Button asChild className="mt-8 w-full" variant={p.popular ? "secondary" : "primary"}>
-                <Link to="/signup">{t("startTrial")}</Link>
+                <Link to="/signup">{t("start")}</Link>
               </Button>
             </article>
           ))}

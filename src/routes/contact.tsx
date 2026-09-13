@@ -18,7 +18,7 @@ function ContactPage() {
   ];
   return (
     <SiteShell>
-      <PageHero kicker="Contact" title="A human still answers." lead="Product questions, incidents, partnerships — pick the right desk." />
+      <PageHero kicker="Contact" title="Schedule a demo." lead="Product questions, a walkthrough, incidents, partnerships — pick the right desk." />
       <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6">
         <ul className="surface-card divide-y divide-border">
           {rows.map(([label, email]) => (
