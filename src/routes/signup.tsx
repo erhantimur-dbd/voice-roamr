@@ -39,7 +39,7 @@ function Signup() {
           <LogoWord />
         </Link>
         <h1 className="mt-8 font-display text-3xl tracking-tight">Start your workspace</h1>
-        <p className="mt-2 text-sm text-muted">Seven-day trial. One agent. Fifty minutes on Grok 2.0 voice.</p>
+        <p className="mt-2 text-sm text-muted">Create an account to publish a voice agent on Grok 2.0.</p>
         {authEnabled ? (
           <div className="mt-6 space-y-3">
             {GROK_PROVIDERS.map((p) => (

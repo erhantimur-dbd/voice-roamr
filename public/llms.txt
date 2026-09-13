@@ -18,7 +18,6 @@ Roamr is a self-serve, multi-tenant Grok 2.0 voice-agent platform. Website: http
 - Growth $149/mo or $1,430/yr — 5 agents, 1,000 min, 3 numbers, all languages
 - Scale $399/mo or $3,830/yr — 25 agents, 5,000 min, 10 numbers, custom voices
 - Overage $0.18–$0.28 / min depending on plan
-- 7-day trial with 50 minutes
 
 ## Languages
 English, Spanish, French, German, Portuguese, Italian, Dutch, Polish, Turkish, Arabic, Hindi, Japanese, Korean, Chinese, Russian, Swedish, Indonesian, Thai, Vietnamese, Czech, Romanian, Ukrainian, Bengali.

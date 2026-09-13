@@ -1,6 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { SiteShell, PageHero } from "@/components/site/shell";
-import { Button } from "@/components/ui/button";
+import { createFileRoute } from "@tanstack/react-router";
+import { MarketingCtas, SiteShell, PageHero } from "@/components/site/shell";
 import { USE_CASES } from "@/lib/product";
 import { useI18n } from "@/lib/locale";
 
@@ -31,9 +30,7 @@ function UseCasesPage() {
         ))}
       </div>
       <div className="mx-auto max-w-6xl px-4 pb-16 sm:px-6">
-        <Button asChild>
-          <Link to="/signup">{t("start")}</Link>
-        </Button>
+        <MarketingCtas size="md" />
       </div>
     </SiteShell>
   );
