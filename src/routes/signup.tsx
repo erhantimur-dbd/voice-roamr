@@ -40,6 +40,17 @@ function Signup() {
         </Link>
         <h1 className="mt-8 font-display text-3xl tracking-tight">Start your workspace</h1>
         <p className="mt-2 text-sm text-muted">Create an account to publish a voice agent on Grok 2.0.</p>
+        <p className="mt-4 text-sm text-muted">
+          Before you create an account, read our{" "}
+          <Link to="/legal/privacy" className="text-fg underline-offset-4 hover:underline">
+            Privacy
+          </Link>{" "}
+          and{" "}
+          <Link to="/legal/terms" className="text-fg underline-offset-4 hover:underline">
+            Terms
+          </Link>
+          .
+        </p>
         {authEnabled ? (
           <div className="mt-6 space-y-3">
             {GROK_PROVIDERS.map((p) => (
