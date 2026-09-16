@@ -13,12 +13,12 @@ export const Route = createFileRoute("/")({
 });
 
 const HERO = {
-  eyebrow: "AI voice agent · real phone number",
+  eyebrow: "AI receptionist · real phone number",
   title: "Keep your business going 24/7 — never miss an opportunity.",
-  sub: "Roamr answers on your number, books or escalates to you, in the languages your customers speak.",
+  sub: "A 24/7 AI receptionist that answers on your number, books the slot, or escalates to you — in the languages your customers speak.",
 } as const;
 
-const HERO_ADDON = "Give each agent a real local number in the markets you sell into.";
+const HERO_ADDON = "Plans include 1, 3, or 10 local numbers as allotments. Hear an agent, then schedule a demo.";
 
 const PROOF = [
   "Real phone number — not a chat widget",
@@ -104,7 +104,7 @@ function Home() {
       <section id="product" className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
         <p className="text-xs font-medium uppercase tracking-[0.18em] text-subtle">{t("how")}</p>
         <h2 className="mt-3 max-w-2xl font-display text-3xl tracking-tight sm:text-4xl">
-          Live on a local number before lunch.
+          Answer, book, or escalate on a real number.
         </h2>
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {[
@@ -226,7 +226,7 @@ function Home() {
                 ))}
               </ul>
               <Button asChild className="mt-8 w-full" variant={p.popular ? "secondary" : "primary"}>
-                <Link to="/signup">{t("start")}</Link>
+                <Link to="/contact">{t("scheduleDemo")}</Link>
               </Button>
             </article>
           ))}

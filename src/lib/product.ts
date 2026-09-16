@@ -74,7 +74,7 @@ export const USE_CASES = [
     name: "Sales",
     kicker: "Revenue",
     summary: "Outbound qualification, inbound product questions, and booking on the first call.",
-    bullets: ["Speaks the prospect’s language", "Logs CRM notes", "Hands hot leads to a human"],
+    bullets: ["Speaks the prospect’s language", "Logs notes to Google Sheets", "Hands hot leads to a human"],
   },
   {
     id: "support",
@@ -207,7 +207,7 @@ export const PLANS = [
       "5,000 voice minutes / mo",
       "10 local numbers",
       "Custom / cloned voices",
-      "All integrations",
+      "Google Workspace Live; other connectors Coming",
       "SSO-ready workspace",
       "Shared inbox + tickets",
       "Success manager",

@@ -74,11 +74,11 @@ export function SiteNav() {
           <div className="hidden sm:block">
             <AuthSlot />
           </div>
-          <Link to="/contact" className="hidden text-sm font-medium text-muted hover:text-fg lg:inline">
-            {t("scheduleDemo")}
+          <Link to="/signup" className="hidden text-sm font-medium text-muted hover:text-fg lg:inline">
+            {t("start")}
           </Link>
           <Button asChild size="sm" className="hidden sm:inline-flex">
-            <Link to="/signup">{t("start")}</Link>
+            <Link to="/contact">{t("scheduleDemo")}</Link>
           </Button>
           <button
             type="button"
@@ -110,14 +110,14 @@ export function SiteNav() {
             <Link to="/login" className="rounded-[12px] px-3 py-3 text-sm" onClick={() => setOpen(false)}>
               {t("signIn")}
             </Link>
+            <Link to="/signup" className="rounded-[12px] px-3 py-3 text-sm" onClick={() => setOpen(false)}>
+              {t("start")}
+            </Link>
             <Link
-              to="/signup"
+              to="/contact"
               className="mt-2 rounded-[4px] bg-ink px-4 py-3 text-center text-sm font-medium text-paper grain-hover"
               onClick={() => setOpen(false)}
             >
-              {t("start")}
-            </Link>
-            <Link to="/contact" className="rounded-[12px] px-3 py-3 text-center text-sm" onClick={() => setOpen(false)}>
               {t("scheduleDemo")}
             </Link>
           </div>
@@ -206,14 +206,20 @@ export function MarketingCtas({
   return (
     <div className={cn("flex flex-col gap-3 sm:flex-row", className)}>
       <Button asChild size={size}>
-        <Link to="/signup">{t("start")}</Link>
-      </Button>
-      <Button asChild size={size} variant="secondary">
         <Link to="/contact">{t("scheduleDemo")}</Link>
       </Button>
       {hearAgent ? (
-        <Button asChild size={size} variant="ghost">
+        <Button asChild size={size} variant="secondary">
           <a href="#demo">{t("demo")}</a>
+        </Button>
+      ) : (
+        <Button asChild size={size} variant="secondary">
+          <Link to="/signup">{t("start")}</Link>
+        </Button>
+      )}
+      {hearAgent ? (
+        <Button asChild size={size} variant="ghost">
+          <Link to="/signup">{t("start")}</Link>
         </Button>
       ) : null}
     </div>

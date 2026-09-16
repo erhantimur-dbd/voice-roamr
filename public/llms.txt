@@ -2,16 +2,20 @@
 
 > Global Voice agents wherever life takes you.
 
-Roamr is a self-serve, multi-tenant Grok 2.0 voice-agent platform. Website: https://www.roamr.mobile
+Roamr is a Grok 2.0 voice-agent platform. Soft Launch is demo-led under an Art 50 ready-to-sell HOLD. Website: https://www.roamr.mobile
 
 ## Product
-- AI receptionist, sales, support and other high-value voice agents
+- AI receptionist (primary), sales, support and other high-value voice agents
 - Full Grok voice stack: grok-voice-think-fast-2.0 speech-to-speech, TTS, STT
 - 23 languages, 16 flagship voices, custom / cloned voices
 - Knowledge base, guardrails, live Google Workspace; other connectors Coming
-- Twilio local numbers
+- Twilio local numbers (Coming)
 - Client console + owner operator desk
-- Stripe billing, monthly or annual
+- Stripe plan billing, monthly or annual (website facts; distinct from the Coming in-call Stripe tool)
+
+## CTA
+- Primary: Schedule a demo — https://www.roamr.mobile/contact
+- Sign up is workspace/account creation only — not a trial and not ready-to-sell
 
 ## Pricing (USD)
 - Starter $49/mo or $470/yr — 1 agent, 200 min, 1 number

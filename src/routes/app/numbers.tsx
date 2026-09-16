@@ -28,7 +28,7 @@ function NumbersPage() {
     <div>
       <h2 className="font-display text-3xl tracking-tight">Local numbers</h2>
       <p className="mt-2 max-w-xl text-sm text-muted">
-        Twilio inside Roamr. Pick a city, assign it to an agent, and the line answers. When Twilio keys are connected, purchases hit the live inventory.
+        Twilio local numbers (Coming). Plans list 1, 3, or 10 local numbers as allotments. Catalog rows are not a live multi-DID claim. When Twilio is wired, purchases will hit live inventory.
       </p>
       <div className="mt-6">
         <h3 className="text-sm uppercase tracking-[0.14em] text-subtle">Your numbers</h3>

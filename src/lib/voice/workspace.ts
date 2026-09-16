@@ -99,10 +99,10 @@ export async function getOrCreateWorkspace(userId: string, email?: string | null
       id, workspace_id, user_id, name, role, status, voice_id, language, model,
       greeting, instructions, personality, guardrails, tools, voice_type
     ) values (
-      ${nid("ag")}, ${id}, ${userId}, ${"Personal assistant"}, ${"assistant"}, ${"draft"},
+      ${nid("ag")}, ${id}, ${userId}, ${"AI receptionist"}, ${"assistant"}, ${"draft"},
       ${"eve"}, ${"en"}, ${MODEL},
-      ${"Hi, this is your Roamr assistant. How can I help?"},
-      ${"You are a private personal assistant. Be concise, warm, and specific. Help with calendar, travel, and follow-ups."},
+      ${"Thanks for calling. I can book the next slot, take a message, or put you through now. What do you need?"},
+      ${"You are an AI receptionist on a phone call. Be concise, warm, and specific. Answer the line, book or move appointments, and escalate or transfer to a human. Never invent private facts; ask if unsure."},
       ${"warm"}, ${JSON.stringify(DEFAULT_GUARDRAILS)}, ${JSON.stringify(["gcal", "gmail"])},
       ${"assistant"}
     )
@@ -113,7 +113,7 @@ export async function getOrCreateWorkspace(userId: string, email?: string | null
       template: "welcome",
       workspaceId: id,
       userId,
-      text: `Welcome to ${name}. Open the console to publish your first agent on Grok 2.0 voice.`,
+      text: `Welcome to ${name}. This workspace is for account setup. Soft Launch is demo-led — schedule a walkthrough to see an AI receptionist answer, book, and escalate.`,
     }).catch(() => {});
   }
   const created = await sql<WorkspaceRow>`select * from workspaces where id = ${id} limit 1`;
