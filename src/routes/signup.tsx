@@ -39,7 +39,16 @@ function Signup() {
           <LogoWord />
         </Link>
         <h1 className="mt-8 font-display text-3xl tracking-tight">Start your workspace</h1>
-        <p className="mt-2 text-sm text-muted">Create an account to publish a voice agent on Grok 2.0.</p>
+        <p className="mt-2 text-sm text-muted">
+          Create an account for a workspace. Sign up is not a trial and not a ready-to-sell purchase.
+        </p>
+        <p className="mt-2 text-sm text-muted">
+          Soft Launch is demo-led. To see an AI receptionist answer, book, and escalate,{" "}
+          <Link to="/contact" className="text-fg underline-offset-4 hover:underline">
+            schedule a demo
+          </Link>
+          .
+        </p>
         <p className="mt-4 text-sm text-muted">
           Before you create an account, read our{" "}
           <Link to="/legal/privacy" className="text-fg underline-offset-4 hover:underline">

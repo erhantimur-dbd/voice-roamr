@@ -53,7 +53,7 @@ function PricingPage() {
                 </ul>
                 <p className={`mt-4 text-xs ${p.popular ? "text-paper/55" : "text-subtle"}`}>Overage {formatMoney(p.overage)} / min</p>
                 <Button asChild className="mt-8 w-full" variant={p.popular ? "secondary" : "primary"}>
-                  <Link to="/signup">{t("start")}</Link>
+                  <Link to="/contact">{t("scheduleDemo")}</Link>
                 </Button>
               </article>
             );
